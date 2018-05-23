@@ -5,16 +5,22 @@
   
 
   
-  <title>test | Hexo</title>
+  <title>DenseCap: Fully Convolutional Localization Networks for Dense Captioning | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2018/05/23/test/index.html">
+  <meta name="description" content="Main Contribution Introduced dense captioning task Proposed Fully Convolutional Localization Network Evaluation on Visual  Genome dataset">
+<meta name="keywords" content="Image Caption,Paper Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DenseCap: Fully Convolutional Localization Networks for Dense Captioning">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Main Contribution Introduced dense captioning task Proposed Fully Convolutional Localization Network Evaluation on Visual  Genome dataset">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-23T09:25:29.146Z">
+<meta property="og:image" content="http://yoursite.com/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/images/1487395538664.png">
+<meta property="og:updated_time" content="2017-02-28T14:16:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
+<meta name="twitter:title" content="DenseCap: Fully Convolutional Localization Networks for Dense Captioning">
+<meta name="twitter:description" content="Main Contribution Introduced dense captioning task Proposed Fully Convolutional Localization Network Evaluation on Visual  Genome dataset">
+<meta name="twitter:image" content="http://yoursite.com/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/images/1487395538664.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,12 +67,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/23/test/" class="article-date">
-  <time datetime="2018-05-23T09:25:29.000Z" itemprop="datePublished">2018-05-23</time>
+    <a href="/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/" class="article-date">
+  <time datetime="2017-02-28T14:14:16.000Z" itemprop="datePublished">2017-02-28</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -75,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      DenseCap: Fully Convolutional Localization Networks for Dense Captioning
     </h1>
   
 
@@ -83,23 +93,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Main-Contribution"><a href="#Main-Contribution" class="headerlink" title="Main Contribution"></a>Main Contribution</h2><ol>
+<li>Introduced dense captioning task</li>
+<li>Proposed Fully Convolutional Localization Network</li>
+<li>Evaluation on Visual  Genome dataset<br><img src=".\images\1487395538664.png" alt="Alt text"><a id="more"></a>
+<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2>###Object Detection</li>
+</ol>
+<ul>
+<li>CNN</li>
+<li>R-CNN : each region of interest was processed independently</li>
+<li>Fast R-CNN : processing all regions with only single forward pass of the CNN</li>
+<li><strong>Faster R-CNN</strong>:a region proposal network (RPN) that regresses from anchors to regions of interest</li>
+</ul>
+<p>Difference from Faster R-CNN: </p>
+<blockquote>
+<p>However, they adopt a 4-step optimization process, while our approach does not require training pipelines. Additionally, we replace their RoI pooling mechanism with a differentiable, spatial soft attention mechanism. In particular, this change allows us to backpropagate through the region proposal network and train the whole model jointly.</p>
+</blockquote>
+<h3 id="Image-Caption"><a href="#Image-Caption" class="headerlink" title="Image Caption"></a>Image Caption</h3><ul>
+<li><strong>Deep visual-semantic alignments for generating image descriptions</strong></li>
+</ul>
+<p>Difference:</p>
+<blockquote>
+<p>…but they do not tackle the joint task of detection of description in one model. Our model is end-to-end and designed in such way that the prediction for each region is a function of the global   image context, which we show also ultimately leads to stronger performance.</p>
+</blockquote>
+<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>To design an architecture that jointly localizes regions of interest and then describes each with natural language.</p>
+<h3 id="Model-Atchitecture"><a href="#Model-Atchitecture" class="headerlink" title="Model Atchitecture"></a>Model Atchitecture</h3><h4 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h4><p>VGG-16, remove the final pooling layer</p>
+<h4 id="Fully-Convolutional-Localization-Layer"><a href="#Fully-Convolutional-Localization-Layer" class="headerlink" title="Fully Convolutional Localization Layer"></a>Fully Convolutional Localization Layer</h4><p>Based on that of Faster R-CNN with a few improvements.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/23/test/" data-id="cjhixtmsi001an61r0myyij3s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/" data-id="cjhixtmrh0000n61rknx6ykh7" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Image-Caption/">Image Caption</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Paper-Notes/">Paper Notes</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
+    <a href="/2017/03/01/Faster-R-CNN/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Faster R-CNN
+        
+      </div>
+    </a>
   
-    <a href="/2018/05/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2017/02/27/Paper-Excerpts-in-Image-Caption/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Paper Excerpts in Image Caption</div>
     </a>
   
 </nav>

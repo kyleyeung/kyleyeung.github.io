@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>My CTF Journey:i春秋《戏说春秋》 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第一关 图穷匕见">
+<meta name="keywords" content="CTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My CTF Journey:i春秋《戏说春秋》">
+<meta property="og:url" content="http://yoursite.com/2016/12/05/My-CTF-Journey-i春秋《戏说春秋》/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第一关 图穷匕见">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://static2.ichunqiu.com/icq/resources//fileupload/hackgame/XSCQ/wenzi/3.jpg">
+<meta property="og:image" content="http://static2.ichunqiu.com/icq/resources//fileupload/hackgame/XSCQ/wenzi/7.jpg">
+<meta property="og:image" content="http://static2.ichunqiu.com/icq/resources//fileupload/hackgame/XSCQ/wenzi/ls.jpg">
+<meta property="og:image" content="http://e.hiphotos.baidu.com/baike/w%3D268/sign=46c6982108d79123e0e0937295345917/91ef76c6a7efce1b115000e3ab51f3deb48f65a4.jpg">
+<meta property="og:image" content="http://pic3.zhimg.com/v2-05df26b1b043e1c85671625dd92bfca6_r.jpg">
+<meta property="og:updated_time" content="2017-01-16T11:51:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="My CTF Journey:i春秋《戏说春秋》">
+<meta name="twitter:description" content="第一关 图穷匕见">
+<meta name="twitter:image" content="http://static2.ichunqiu.com/icq/resources//fileupload/hackgame/XSCQ/wenzi/3.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-My-CTF-Journey-i春秋《戏说春秋》" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/05/My-CTF-Journey-i春秋《戏说春秋》/" class="article-date">
+  <time datetime="2016-12-05T12:10:53.000Z" itemprop="datePublished">2016-12-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hacking/">Hacking</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      My CTF Journey:i春秋《戏说春秋》
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一关-图穷匕见"><a href="#第一关-图穷匕见" class="headerlink" title="第一关 图穷匕见"></a>第一关 图穷匕见</h2><a id="more"></a>
+<p>题目给了一张图<br><img src="http://static2.ichunqiu.com/icq/resources//fileupload/hackgame/XSCQ/wenzi/3.jpg" alt="Alt text"><br>string 打开最后有一个字符串：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%e6%b2%a1%e9%94%99%e4%bd%a0%e7%9a%84%e6%89%93%e5%bc%80%e6%96%b9%e5%bc%8f%e7%9a%84%e6%ad%a3%e7%a1%ae%e7%9a%84%ef%bc%8c%e9%80%9a%e5%be%80%e4%b8%8b%e4%b8%80%e5%85%b3%e7%9a%84key%e6%98%af%ef%bc%9a%e8%8a%9d%e9%ba%bb%e5%bc%80%e9%97%a8</span><br></pre></td></tr></table></figure></p>
+<p>使用url编码解码器得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">没错你的打开方式的正确的，通往下一关的key是：芝麻开门</span><br></pre></td></tr></table></figure></p>
+<h2 id="第二关-纸上谈兵"><a href="#第二关-纸上谈兵" class="headerlink" title="第二关 纸上谈兵"></a>第二关 纸上谈兵</h2><p>一开始什么也没有。查看网页源代码，找到<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">value</span>=<span class="string">"W1ZbTDEYCh0cDRkcGw"</span> <span class="attr">name</span>=<span class="string">"coursescoreid"</span> <span class="attr">id</span>=<span class="string">"coursescoreid"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>把value值base64解码后提交，不对。<br>无奈上网搜了一下，才发现原来在页面里有一行非常长，被挡住了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通关秘钥是一个贝丝第64代的人设计的，你能解开它吗？5be05ouJ5be05ouJ5bCP6a2U5LuZ</span><br></pre></td></tr></table></figure></p>
+<p>解码后得到答案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">巴拉巴拉小魔仙</span><br></pre></td></tr></table></figure></p>
+<p>服了…以后看代码还是要仔细。</p>
+<h2 id="第三关-窃符救赵"><a href="#第三关-窃符救赵" class="headerlink" title="第三关 窃符救赵"></a>第三关 窃符救赵</h2><p>给了一张图：<br><img src="http://static2.ichunqiu.com/icq/resources//fileupload/hackgame/XSCQ/wenzi/7.jpg" alt="Alt text"><br>binwalk之，发现zip的痕迹。重命名为7.zip,解压后得到dh.jpg.<br>然后就不知道该怎么办了，strings无迹象，stegdetect也没有结果。Key在哪里？<br>无奈百度之，给这脑洞跪了：原来是要把图片放到百度识图里，将搜索得到的“杜虎符”三个字作为Key提交…</p>
+<h2 id="第四关-老马识途"><a href="#第四关-老马识途" class="headerlink" title="第四关 老马识途"></a>第四关 老马识途</h2><p><img src="http://static2.ichunqiu.com/icq/resources//fileupload/hackgame/XSCQ/wenzi/ls.jpg" alt="Alt text"><br>猪圈密码。<br><img src="http://e.hiphotos.baidu.com/baike/w%3D268/sign=46c6982108d79123e0e0937295345917/91ef76c6a7efce1b115000e3ab51f3deb48f65a4.jpg" alt="Alt text"><br>得到HORSE.坑爹的是还要翻译成“马”。</p>
+<h2 id="第五关-东施效颦"><a href="#第五关-东施效颦" class="headerlink" title="第五关 东施效颦"></a>第五关 东施效颦</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">趁着西施跟随父母回乡下走亲戚时，东施冒充西施与范蠡对唱情歌，</span><br><span class="line"></span><br><span class="line">“啊哈啊啊，哈哈哈哈哈，啊啊啊哈，啊”</span><br><span class="line"></span><br><span class="line">但是范蠡根本就不上当，毫不留情的指责东施说，你只知道冒充唱歌，但是你跟不懂西施在歌里对我说的话。那么问题来了，西施的歌里到底藏着什么秘密呢。</span><br></pre></td></tr></table></figure>
+<p>很显然这是一段Morse Code，“哈”为长，“啊”为短，四个字母为LOVE。需要注意的是“哈哈哈哈哈”似乎有误，应当是“哈哈哈”。</p>
+<h2 id="第六关-大义灭亲"><a href="#第六关-大义灭亲" class="headerlink" title="第六关 大义灭亲"></a>第六关 大义灭亲</h2><p>讲的是石碏(que)大义灭亲的故事。<br><img src="http://pic3.zhimg.com/v2-05df26b1b043e1c85671625dd92bfca6_r.jpg" alt="Alt text"><br>又到了喜闻乐见的猜密码环节。<br>我猜不出来。我百度了。密码是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shique719</span><br></pre></td></tr></table></figure></p>
+<p>719是卫桓公被弑的年份…U fking kidding me?</p>
+<h2 id="第七关-三令五申"><a href="#第七关-三令五申" class="headerlink" title="第七关 三令五申"></a>第七关 三令五申</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“这个盒子里面的是盛放军令状，平时将军写好军令就直接放在里面，我和其他副将都能打开这个盒子查看，然后执行里面的命令。而其他人无法解开这个盒子查看里面的军令，如果大王能够解开这个盒子，在里面放入一张饶恕两位队长的军令，您的爱姬自然能够获救。”</span><br></pre></td></tr></table></figure>
+<p>要获得开启盒子的密钥。也是没想出来，居然是权限值！<br>将军是文件的所有者，具有读取、写入和执行权限，副将没有写入权限，只有读取和执行，其他人无权限，因此计算出的权限值为750.这个套路实在是深。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/05/My-CTF-Journey-i春秋《戏说春秋》/" data-id="cjhixtmrs0009n61ryxldr0u7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/">CTF</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/12/Show-and-Tell-Lessons-learned-from-the-2015-MSCOCO-Image-Captioning-Challenge/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Show and Tell: Lessons learned from the 2015 MSCOCO Image Captioning Challenge
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/14/My-CTF-Journey-SUCTF招新-Web/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">My CTF Journey: SUCTF招新：Web</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hacking/">Hacking</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Image-Caption/">Image Caption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-Detection/">Object Detection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Paper-Notes/">Paper Notes</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 13.33px;">CTF</a> <a href="/tags/Image-Caption/" style="font-size: 16.67px;">Image Caption</a> <a href="/tags/Object-Detection/" style="font-size: 10px;">Object Detection</a> <a href="/tags/Paper-Notes/" style="font-size: 20px;">Paper Notes</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/23/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/23/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/01/Faster-R-CNN/">Faster R-CNN</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/">DenseCap: Fully Convolutional Localization Networks for Dense Captioning</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/27/Paper-Excerpts-in-Image-Caption/">Paper Excerpts in Image Caption</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

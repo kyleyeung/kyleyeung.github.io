@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>My CTF Journey: WeChall  Writeup(1) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="以前想写一些技术类的内容总是无从下手，因为多少会有些枯燥。刚好最近的闲暇时光在做CTF题，都是一些比较有意思的挑战（类似于谜题），决定从这里试水。有兴趣的朋友可以到www.wechall.net试一试。">
+<meta name="keywords" content="CTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My CTF Journey: WeChall  Writeup(1)">
+<meta property="og:url" content="http://yoursite.com/2016/07/16/My-CTF-Journey-WeChall-Writeup-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="以前想写一些技术类的内容总是无从下手，因为多少会有些枯燥。刚好最近的闲暇时光在做CTF题，都是一些比较有意思的挑战（类似于谜题），决定从这里试水。有兴趣的朋友可以到www.wechall.net试一试。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-01-16T12:02:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="My CTF Journey: WeChall  Writeup(1)">
+<meta name="twitter:description" content="以前想写一些技术类的内容总是无从下手，因为多少会有些枯燥。刚好最近的闲暇时光在做CTF题，都是一些比较有意思的挑战（类似于谜题），决定从这里试水。有兴趣的朋友可以到www.wechall.net试一试。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-My-CTF-Journey-WeChall-Writeup-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/16/My-CTF-Journey-WeChall-Writeup-1/" class="article-date">
+  <time datetime="2016-07-16T12:49:45.000Z" itemprop="datePublished">2016-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hacking/">Hacking</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      My CTF Journey: WeChall  Writeup(1)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以前想写一些技术类的内容总是无从下手，因为多少会有些枯燥。刚好最近的闲暇时光在做CTF题，都是一些比较有意思的挑战（类似于谜题），决定从这里试水。有兴趣的朋友可以到<a href="http://www.wechall.net试一试。" target="_blank" rel="noopener">www.wechall.net试一试。</a><br><a id="more"></a></p>
+<h3 id="Prime-Factory"><a href="#Prime-Factory" class="headerlink" title="Prime Factory"></a>Prime Factory</h3><blockquote>
+<p>Your task is simple:<br>Find the first two primes above 1 million, whose separate digit sums are also prime.<br>As example take 23, which is a prime whose digit sum, 5, is also prime.<br>The solution is the concatination of the two numbers,<br>Example: If the first number is 1,234,567<br>and the second is 8,765,432,<br>your solution is 12345678765432</p>
+</blockquote>
+<p>这道题比较简单。找到大于一百万且各位数字相加后也为质数的前两个质数，把这两个数串接起来就是答案。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;math.h&gt;</span><br><span class="line">int is_prime(int i);</span><br><span class="line">int digitsum(int i);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,x1,x2,count=0;</span><br><span class="line">    for(i=1000001;count&lt;2;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(is_prime(i))</span><br><span class="line">            if(is_prime(digitsum(i)))</span><br><span class="line">            &#123;</span><br><span class="line">                printf(&quot;%d\n&quot;,i);</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int is_prime(int i)</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    for(t=2;t&lt;ceil(sqrt(i))+1;t++)</span><br><span class="line">        if(i%t==0) return 0;</span><br><span class="line"></span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int digitsum(int i)</span><br><span class="line">&#123;</span><br><span class="line">    int sum=0,t=10;</span><br><span class="line">    while(i&gt;=1)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=i%t;</span><br><span class="line">        i=floor(i/10);</span><br><span class="line">    &#125;</span><br><span class="line">    return sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>C语言写起来比较复杂，要是用Python的话就会简洁很多：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import subprocess as sp</span><br><span class="line"></span><br><span class="line">t = 1000000</span><br><span class="line">def isPrime(x):</span><br><span class="line">    t = sp.check_output((&quot;factor %d&quot; % x).split())</span><br><span class="line">    if t.split()[1] == str(x):</span><br><span class="line">        return True</span><br><span class="line">    return False</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    t += 1</span><br><span class="line">    if isPrime(t) and isPrime(sum([int(x) for x in str(t)])):</span><br><span class="line">        print t</span><br></pre></td></tr></table></figure>
+<p>（这段代码来自<a href="http://winkar.github.io/2015/01/24/wechall.html" target="_blank" rel="noopener">陈文青的主页</a>）<br>是不是看起来简洁多了？掌握一门脚本语言真的很重要啊。<br>p.s. 其实还有更简便的：上网搜索质数表，翻到100万左右的数，挨个校验一下很快就能找到答案。某种程度上我认为这是更hacker的方法。</p>
+<h3 id="Training-Get-Sourced"><a href="#Training-Get-Sourced" class="headerlink" title="Training: Get Sourced"></a>Training: Get Sourced</h3><blockquote>
+<p>The solution is hidden in this page<br><em>Use View Sourcecode to get it</em></p>
+</blockquote>
+<p>很基础的CTF题。人家都讲了去看源代码，那就在网页上右键-&gt;查看源代码，拖动到最后一行得到答案。                                                                                                                                                                                                                                           </p>
+<blockquote>
+<p>You are looking for this password: html_sourcecode     </p>
+</blockquote>
+<h3 id="Training-Stegano-I"><a href="#Training-Stegano-I" class="headerlink" title="Training: Stegano I"></a>Training: Stegano I</h3><blockquote>
+<p>This is the most basic image stegano I can think of.</p>
+</blockquote>
+<p>然后给了一张视线模糊的图。<br>Stegano是Steganography的短写，意思是隐写术（<a href="https://en.wikipedia.org/wiki/Steganography" target="_blank" rel="noopener">Wiki:Stegenography</a>）。此处是通过一定方法在图片中隐藏了某些信息，也是常见的题目。第一反应是先查看十六进制数据。不过要是懒的话可以先右键用记事本打开，就能找到答案:</p>
+<blockquote>
+<p>Look what the hex-edit revealed: passwd:steganoI</p>
+</blockquote>
+<h3 id="Training-Crypto-Caesar-I"><a href="#Training-Crypto-Caesar-I" class="headerlink" title="Training: Crypto - Caesar I"></a>Training: Crypto - Caesar I</h3><blockquote>
+<p>As on most challenge sites, there are some beginner cryptos, and often you get started with the good old caesar cipher.<br>I welcome you to the WeChall style of these training challenges :)<br>Enjoy!<br>接着是下面一段密文：<br>BPM YCQKS JZWEV NWF RCUXA WDMZ BPM TIHG LWO WN KIMAIZ IVL GWCZ CVQYCM AWTCBQWV QA JZKMMUKNQAJP</p>
+</blockquote>
+<p>凯撒密码（<a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank" rel="noopener">Wiki: Caesar cipher</a>）是密码学里的入门科目,基本原理就是把字母表顺次移动一定的位数k后重新映射。比如k=3时，密文D就代表A，you加密后就变成了brx.<br>实在懒得写程序了，网上搜了一个现成的解码器，只不过k的值要手工试。得到答案:</p>
+<blockquote>
+<p><em>我忘了，也懒得再做一遍抱歉…</em></p>
+</blockquote>
+<p>当然也有简洁但高深一点的做法，利用Linux系统下的tr命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;VJG SWKEM DTQYP HQZ LWORU QXGT VJG NCBA FQI QH ECGUCT CPF AQWT WPKSWG UQNWVKQP KU UDCJRKRJUROQ&quot; | tr [A-Z] [Y-ZA-X]</span><br></pre></td></tr></table></figure></p>
+<p>诺，就是这样。</p>
+<p>今天就到这里吧。写下这些的初衷是记录自己的爱好同时也是日常娱乐项目。专业外人士能看到这里真的很不容易，衷心地祝您晚安。</p>
+<p><em>不爱看也没事儿，反正我还(ke)是(neng)会继续写的。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/16/My-CTF-Journey-WeChall-Writeup-1/" data-id="cjhixtmrq0006n61rfwyhfgja" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/">CTF</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/14/My-CTF-Journey-SUCTF招新-Web/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          My CTF Journey: SUCTF招新：Web
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hacking/">Hacking</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Image-Caption/">Image Caption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-Detection/">Object Detection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Paper-Notes/">Paper Notes</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 13.33px;">CTF</a> <a href="/tags/Image-Caption/" style="font-size: 16.67px;">Image Caption</a> <a href="/tags/Object-Detection/" style="font-size: 10px;">Object Detection</a> <a href="/tags/Paper-Notes/" style="font-size: 20px;">Paper Notes</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/23/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/23/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/01/Faster-R-CNN/">Faster R-CNN</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/">DenseCap: Fully Convolutional Localization Networks for Dense Captioning</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/27/Paper-Excerpts-in-Image-Caption/">Paper Excerpts in Image Caption</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
