@@ -3,46 +3,46 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create','UA-47712474-1','auto');ga('send','pageview');
-</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Every Picture Tells a Story:Generating Sentences From Images</h1><a id="logo" href="/.">Curbing My Enthusiasm</a><p class="description">You are free to do whatever you won't do.</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Every Picture Tells a Story:Generating Sentences From Images</h1><div class="post-meta">Jan 16, 2017<span> | </span><span class="category"><a href="/categories/Deep-Learning/">Deep Learning</a></span></div><div class="post-content"><h2>Main Contribution</h2>
+</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Every Picture Tells a Story:Generating Sentences From Images</h1><a id="logo" href="/.">Curbing My Enthusiasm</a><p class="description">You are free to do whatever you won't do.</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Every Picture Tells a Story:Generating Sentences From Images</h1><div class="post-meta">Jan 16, 2017<span> | </span><span class="category"><a href="/categories/Deep-Learning/">Deep Learning</a></span></div><div class="post-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="main-contribution"><a class="header-anchor" href="#main-contribution">¶</a>Main Contribution</h2>
 <ol>
 <li>A dataset to study the problem of generating short descriptive sentences from images</li>
 <li>A novel representation intermediate between images and sentences</li>
 <li>A novel, discriminative approach that produces very good results at sentence annotation</li>
 <li>Methods to use distributional semantics to cope with out of vocabulary words for illustration</li>
-<li>A quantitative evaluation of sentence generation at a useful scale
-&lt;!-- more --&gt;</li>
+<li>A quantitative evaluation of sentence generation at a useful scale</li>
 </ol>
-<h2>Approach</h2>
+<a id="more"></a>
+<h2 id="approach"><a class="header-anchor" href="#approach">¶</a>Approach</h2>
 <ul>
 <li>Assume a space of Meanings that comes between the space of Sentences and the space of Images</li>
 <li>Map each to the meaning space</li>
 <li>Compare the results</li>
 </ul>
-<h3>Mapping Image to Meaning</h3>
-<p>Representation of meaning: <strong>a triplet of &lt;object, action, scene&gt;</strong>
+<h3 id="mapping-image-to-meaning"><a class="header-anchor" href="#mapping-image-to-meaning">¶</a>Mapping Image to Meaning</h3>
+<p>Representation of meaning: <strong>a triplet of &lt;object, action, scene&gt;</strong><br>
 <strong>Why?</strong></p>
 <blockquote>
 <p>This triplet provides a holistic idea about what the image (resp. sentence) is about and what is most important.For the image, this is the part that people would talk about first; for the sentence, this is the structure that should be preserved in the tightest summary.</p>
 </blockquote>
-<p><strong>How to construct the triplet?</strong>
-Each slot in the meaning representation can take a value from a set of discrete values.The edges correspond to the binary relationships between nodes.
-<img src="%5Cimages%5C1484534108821.png" alt="Alt text|middle">
-Objects: 23 nouns
-Actions: 15 values
+<p><strong>How to construct the triplet?</strong><br>
+Each slot in the meaning representation can take a value from a set of discrete values.The edges correspond to the binary relationships between nodes.<br>
+<img src="%5Cimages%5C1484534108821.png" alt="Alt text|middle"><br>
+Objects: 23 nouns<br>
+Actions: 15 values<br>
 Scenes: 29 values</p>
 <p><strong>How to do inference?</strong></p>
 <blockquote>
 <p>Having provided the potentials of the MRF, we use a greedy method to do inference. Inference involves finding the best selection of the discrete sets of values given the unary and binary potentials.</p>
 </blockquote>
-<h3>Image Potentials</h3>
-<h4>Node Potentials</h4>
+<h3 id="image-potentials"><a class="header-anchor" href="#image-potentials">¶</a>Image Potentials</h3>
+<h4 id="node-potentials"><a class="header-anchor" href="#node-potentials">¶</a>Node Potentials</h4>
 <p><strong>Image features</strong></p>
 <ul>
 <li>Felzenszwalb et al. detector responses</li>
 <li>Hoiem et al. classification responses</li>
 <li>Gist-based scene classification responses</li>
 </ul>
-<p><strong>Node features</strong>
+<p><strong>Node features</strong><br>
 Node features are built by fitting a linear SVM to predict each of the nodes independently on the image features.</p>
 <blockquote>
 <p>This is a number-of-nodes-dimensional vector and each element in this vector provides a score for a node given the image.</p>
@@ -56,7 +56,7 @@ Node features are built by fitting a linear SVM to predict each of the nodes ind
 <li>by matching those node features derived from classifiers and detectors (above), we obtain the k-nearest neighbours in the training set to the test image, then compute the average of the node features over those neighbours, <em>computed from the sentence side</em>. By doing so, we have a representation of what the sentence representation does for images that produce similar classifier and detector outputs.</li>
 </ul>
 </blockquote>
-<h4>Edge Potentials</h4>
+<h4 id="edge-potentials"><a class="header-anchor" href="#edge-potentials">¶</a>Edge Potentials</h4>
 <p><strong>Two problems</strong></p>
 <ol>
 <li>Introducing a parameter for each edge results in unmanageable number of parameters</li>
@@ -67,7 +67,7 @@ Node features are built by fitting a linear SVM to predict each of the nodes ind
 <li>Control the number of parameters</li>
 <li>Do smoothing</li>
 </ol>
-<p><strong>How to limit the number of parameters?</strong>
+<p><strong>How to limit the number of parameters?</strong><br>
 Use four different estimates for edges:</p>
 <ul>
 <li>The normalized frequency of the word A in our corpus, $f(A)$</li>
@@ -75,12 +75,12 @@ Use four different estimates for edges:</p>
 <li>The normalized frequency of (A and B) at the same time, $f(A, B)$</li>
 <li>$f(A, B)\over f(A)f(B)$</li>
 </ul>
-<h4>Sequence Potentials</h4>
-<p><strong>How to represent a sentence?</strong>
+<h4 id="sequence-potentials"><a class="header-anchor" href="#sequence-potentials">¶</a>Sequence Potentials</h4>
+<p><strong>How to represent a sentence?</strong><br>
 Curran &amp; Clark parser --&gt; dependency parse --&gt; (object, action) pairs</p>
-<p><strong>How to measure similarity?</strong>
+<p><strong>How to measure similarity?</strong><br>
 Lin Similarity Measure</p>
-<p><strong>How to discover co-occurring actions?</strong>
+<p><strong>How to discover co-occurring actions?</strong><br>
 Action Co-occurrence Score</p>
 <p><strong>Node potentials</strong></p>
 <blockquote>
@@ -93,23 +93,23 @@ Action Co-occurrence Score</p>
 <li>We also include the sentence node feature for the reference sentence.</li>
 </ol>
 </blockquote>
-<p><strong>Edge Potentials</strong>
+<p><strong>Edge Potentials</strong><br>
 Identical to those of images.</p>
-<h4>Learning</h4>
+<h4 id="learning"><a class="header-anchor" href="#learning">¶</a>Learning</h4>
 <p>2 mappings to be learned:</p>
 <ol>
 <li>image space --&gt; meaning space, using image potentials</li>
 <li>sentence space --&gt; meaning space, using sentence potentials</li>
 </ol>
-<p><strong>Structure learning problem</strong>
-$$\min_{\omega} {\lambda\over2}\lVert\omega\rVert^2+{1\over n}\sum _{i\in examples}\xi <em>i$$
-subject to
-$$\omega\Phi(x_i,y_i)+\xi_i\ge\max</em>{y\in meaning\ space }\omega\Phi(x_i,y)+L(y_i,y)\ \forall i\in examples$$
+<p><strong>Structure learning problem</strong><br>
+$$\min_{\omega} {\lambda\over2}\lVert\omega\rVert^2+{1\over n}\sum _{i\in examples}\xi <em>i$$<br>
+subject to<br>
+$$\omega\Phi(x_i,y_i)+\xi_i\ge\max</em>{y\in meaning\ space }\omega\Phi(x_i,y)+L(y_i,y)\ \forall i\in examples$$<br>
 $$\xi_i\ge 0 \ \forall i \in examples$$</p>
-<h2>Evaluation</h2>
-<h3>Dataset</h3>
+<h2 id="evaluation"><a class="header-anchor" href="#evaluation">¶</a>Evaluation</h2>
+<h3 id="dataset"><a class="header-anchor" href="#dataset">¶</a>Dataset</h3>
 <p>Built from PASCAL 2008 images with Amazon Mechanical Turk</p>
-<h3>Inference</h3>
+<h3 id="inference"><a class="header-anchor" href="#inference">¶</a>Inference</h3>
 </div><div class="tags"><a href="/tags/Image-Caption/">Image Caption</a><a href="/tags/Paper-Notes/">Paper Notes</a></div><div class="post-nav"><a class="pre" href="/2017/02/27/Paper-Excerpts-in-Image-Caption/">Paper Excerpts in Image Caption</a><a class="next" href="/2017/01/12/Show-and-Tell-Lessons-learned-from-the-2015-MSCOCO-Image-Captioning-Challenge/">Show and Tell: Lessons Learned From the 2015 MSCOCO Image Captioning Challenge</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computational-Social-Science/">Computational Social Science</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hacking/">Hacking</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life-Record/">Life Record</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/Image-Caption/" style="font-size: 15px;">Image Caption</a> <a href="/tags/Paper-Notes/" style="font-size: 15px;">Paper Notes</a> <a href="/tags/Object-Detection/" style="font-size: 15px;">Object Detection</a> <a href="/tags/CTF/" style="font-size: 15px;">CTF</a> <a href="/tags/Birthday/" style="font-size: 15px;">Birthday</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/23/where-would-you-go/">Where'd You Go?</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/21/what-is-computational-social-science/">什么是计算社会科学？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/18/生日快乐，凯尔先生2018/">生日快乐,凯尔先生</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Curbing-my-enthusiasm/">Curbing My Enthusiasm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/01/Faster-R-CNN/">Faster R-CNN</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/">DenseCap: Fully Convolutional Localization Networks for Dense Captioning</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/27/Paper-Excerpts-in-Image-Caption/">Paper Excerpts in Image Caption</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/16/Every-Picture-Tells-a-Story-Generating-Sentences-from-Images/">Every Picture Tells a Story:Generating Sentences From Images</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/Show-and-Tell-Lessons-learned-from-the-2015-MSCOCO-Image-Captioning-Challenge/">Show and Tell: Lessons Learned From the 2015 MSCOCO Image Captioning Challenge</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/05/My-CTF-Journey-i春秋《戏说春秋》/">My CTF Journey:i春秋《戏说春秋》</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Curbing My Enthusiasm.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
   });

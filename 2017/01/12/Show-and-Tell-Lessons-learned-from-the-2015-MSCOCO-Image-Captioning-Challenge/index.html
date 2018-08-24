@@ -3,7 +3,7 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create','UA-47712474-1','auto');ga('send','pageview');
-</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Show and Tell: Lessons Learned From the 2015 MSCOCO Image Captioning Challenge</h1><a id="logo" href="/.">Curbing My Enthusiasm</a><p class="description">You are free to do whatever you won't do.</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Show and Tell: Lessons Learned From the 2015 MSCOCO Image Captioning Challenge</h1><div class="post-meta">Jan 12, 2017<span> | </span><span class="category"><a href="/categories/Deep-Learning/">Deep Learning</a></span></div><div class="post-content"><h2>Main contribution</h2>
+</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Show and Tell: Lessons Learned From the 2015 MSCOCO Image Captioning Challenge</h1><a id="logo" href="/.">Curbing My Enthusiasm</a><p class="description">You are free to do whatever you won't do.</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Show and Tell: Lessons Learned From the 2015 MSCOCO Image Captioning Challenge</h1><div class="post-meta">Jan 12, 2017<span> | </span><span class="category"><a href="/categories/Deep-Learning/">Deep Learning</a></span></div><div class="post-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="main-contribution"><a class="header-anchor" href="#main-contribution">¶</a>Main contribution</h2>
 <ol>
 <li>An end-to-end system for image caption</li>
 <li>The model combines state-of-art sub-networks for vision and language models, yielding significantly better performance compared to state-of-the-art approaches</li>
@@ -13,31 +13,31 @@ ga('create','UA-47712474-1','auto');ga('send','pageview');
 <li>On Flickr30k, we improve from 56 to 66, and on SBU, from 19 to 28</li>
 </ul>
 <ol start="3">
-<li>We describe the lessons learned from participating in the first MSCOCO competition, which helped us to improve our initial model and place first in automatic metrics, and first (tied with another team) in human evaluation.
-&lt;!-- more --&gt;</li>
+<li>We describe the lessons learned from participating in the first MSCOCO competition, which helped us to improve our initial model and place first in automatic metrics, and first (tied with another team) in human evaluation.</li>
 </ol>
-<h2>Differences from related work</h2>
-<h3>from Mao et al.</h3>
-<p><em>Explain images with multimodal recurrent neural networks</em>
+<a id="more"></a>
+<h2 id="differences-from-related-work"><a class="header-anchor" href="#differences-from-related-work">¶</a>Differences from related work</h2>
+<h3 id="from-mao-et-al"><a class="header-anchor" href="#from-mao-et-al">¶</a>from Mao et al.</h3>
+<p><em>Explain images with multimodal recurrent neural networks</em><br>
 <em>Deep captioning with multimodal recurrent neural networks (m-rnn)</em></p>
 <ol>
 <li>We use a more powerful RNN model</li>
 <li>We provide the visual input to the RNN model directly</li>
 <li>We have substantially better results on the established benchmarks</li>
 </ol>
-<h3>from Kiros et al.</h3>
+<h3 id="from-kiros-et-al"><a class="header-anchor" href="#from-kiros-et-al">¶</a>from Kiros et al.</h3>
 <p><em>Unifying visual-semantic embeddings with multimodal neural language models</em></p>
 <ol>
 <li>They use two separate pathways (one for images, one for text) to define a joint embedding</li>
 <li>Even though they can generate text, their approach is highly tuned for ranking</li>
 </ol>
-<h2>Model</h2>
-<p>$$\theta^*=\arg\max_ {\theta}\sum_{(I,S)}logp(S|I;\theta)$$
+<h2 id="model"><a class="header-anchor" href="#model">¶</a>Model</h2>
+<p>$$\theta^*=\arg\max_ {\theta}\sum_{(I,S)}logp(S|I;\theta)$$<br>
 $\theta$ are the parameters of our model, $I$ is an image, and $S$ its correct transcription</p>
-<p>Since $S$ represents a sentence and its length is unbounded, so the chain rule is applied:
-$$logp(S|I)=\sum_{t=0}^{N}logp(S_t|I,S_0,\cdots,S_{t-1})$$
-A RNN is used to model $$p(S_t|I,S_0,\cdots,S_{t-1} )$$:
-$$h_{t+1}=f(h_t,x_t)$$
+<p>Since $S$ represents a sentence and its length is unbounded, so the chain rule is applied:<br>
+$$logp(S|I)=\sum_{t=0}^{N}logp(S_t|I,S_0,\cdots,S_{t-1})$$<br>
+A RNN is used to model $$p(S_t|I,S_0,\cdots,S_{t-1} )$$:<br>
+$$h_{t+1}=f(h_t,x_t)$$<br>
 Here, two <strong>crucial design choices</strong> are to be made:</p>
 <ol>
 <li>the form of $f$ :<strong>LSTM</strong></li>
@@ -48,33 +48,33 @@ Here, two <strong>crucial design choices</strong> are to be made:</p>
 </ul>
 </li>
 </ol>
-<h3>LSTM-based Sentence Generator</h3>
+<h3 id="lstm-based-sentence-generator"><a class="header-anchor" href="#lstm-based-sentence-generator">¶</a>LSTM-based Sentence Generator</h3>
 <p>(Introduction for LSTM ommitted)</p>
-<h4>Training</h4>
-<p>$$x_{-1}=CNN(I)$$
-$$x_t=W_eS_t,t\in{ {0 \dots N-1} }$$
-$$p_{t+1} = LSTM(x_t),t\in{ {0 \dots N-1} }$$
-$S_t$ is a one-hot vector to the size of the dictionary, representing each word.
-$S_0$ is a special start word and $S_N$ is a special stop word.
+<h4 id="training"><a class="header-anchor" href="#training">¶</a>Training</h4>
+<p>$$x_{-1}=CNN(I)$$<br>
+$$x_t=W_eS_t,t\in{ {0 \dots N-1} }$$<br>
+$$p_{t+1} = LSTM(x_t),t\in{ {0 \dots N-1} }$$<br>
+$S_t$ is a one-hot vector to the size of the dictionary, representing each word.<br>
+$S_0$ is a special start word and $S_N$ is a special stop word.<br>
 The image $I$ only input <strong>once</strong> at $t=-1$.Why <strong>once</strong>?</p>
 <blockquote>
 <p>We empirically verified that feeding the image at each time step as an extra input yields inferior results, as the network can explicitly exploit noise in the image and overfits more easily.</p>
 </blockquote>
-<p><strong>Loss Function</strong>:
-$$L(I,S)=-\sum_{t=1}^Nlogp_t(S_t)$$
+<p><strong>Loss Function</strong>:<br>
+$$L(I,S)=-\sum_{t=1}^Nlogp_t(S_t)$$<br>
 The above loss is minimized w.r.t. all the parameters of the LSTM, the top layer of the image embedder CNN and word embeddings $W_e$.</p>
-<h4>Inference</h4>
+<h4 id="inference"><a class="header-anchor" href="#inference">¶</a>Inference</h4>
 <p>Two approches can be used  to generate a sentence given a image:</p>
 <ol>
-<li><strong>Sampling</strong>
+<li><strong>Sampling</strong><br>
 Sample the first word according to $p_1$, then continue sampling until the end token of some maximum length.</li>
-<li><strong>BeamSearch</strong>
-Iteratively consider the set of the $k$ best sentences up to time $t$ as candidates to generate sentences of size $t+1$, and keep only the resulting best $k$ of them.
-Why it's better?
-This better approximates $S=\arg\max_ {S^\prime}p(S^\prime|I)$</li>
+<li><strong>BeamSearch</strong><br>
+Iteratively consider the set of the $k$ best sentences up to time $t$ as candidates to generate sentences of size $t+1$, and keep only the resulting best $k$ of them.<br>
+Why it’s better?<br>
+This better approximates $S=\arg\max_ {S<sup>\prime}p(S</sup>\prime|I)$</li>
 </ol>
-<h2>Experiments</h2>
-<h3>Evaluation</h3>
+<h2 id="experiments"><a class="header-anchor" href="#experiments">¶</a>Experiments</h2>
+<h3 id="evaluation"><a class="header-anchor" href="#evaluation">¶</a>Evaluation</h3>
 <ol>
 <li><strong>Human raters</strong></li>
 </ol>
@@ -107,7 +107,7 @@ This better approximates $S=\arg\max_ {S^\prime}p(S^\prime|I)$</li>
 <li><strong>METEOR abd ROUGE</strong></li>
 <li><strong>reacall@K</strong></li>
 </ol>
-<h3>Datasets</h3>
+<h3 id="datasets"><a class="header-anchor" href="#datasets">¶</a>Datasets</h3>
 <table>
 <thead>
 <tr>
@@ -158,8 +158,8 @@ This better approximates $S=\arg\max_ {S^\prime}p(S^\prime|I)$</li>
 <li><strong>SBU</strong>:1000 images were hold out for testing and train on the rest.</li>
 <li><strong>MSCOCO</strong>: 4K random images reserved from the MSCOCO validation set as test, called COCO-4k, and are used to report results.</li>
 </ul>
-<h3>Results</h3>
-<h4>Training Details</h4>
+<h3 id="results"><a class="header-anchor" href="#results">¶</a>Results</h3>
+<h4 id="training-details"><a class="header-anchor" href="#training-details">¶</a>Training Details</h4>
 <p>How dataset size affects generalization?</p>
 <blockquote>
 <p>We believe that, even with the results we obtained which are quite good, the advantage of our method versus most current human-engineered approaches will only increase in the next few years as training set sizes will grow.</p>
@@ -183,11 +183,11 @@ This better approximates $S=\arg\max_ {S^\prime}p(S^\prime|I)$</li>
 <li>No momentum</li>
 <li>All weights were randomly initialized except for the CNN weights</li>
 </ul>
-<h4>Generation Results</h4>
+<h4 id="generation-results"><a class="header-anchor" href="#generation-results">¶</a>Generation Results</h4>
 <blockquote>
 <p>We do think it is more meaningful to report BLEU-4, which is the standard in machine translation moving forward.</p>
 </blockquote>
-<h4>Transfer Learning, Data Size and Label Quality</h4>
+<h4 id="transfer-learning-data-size-and-label-quality"><a class="header-anchor" href="#transfer-learning-data-size-and-label-quality">¶</a>Transfer Learning, Data Size and Label Quality</h4>
 <ul>
 <li>Flickr30k to Flickr8k :the results obtained are 4 BLEU points better. <strong>Why?</strong> More training data added.</li>
 <li>MSCOCO to Flicker8k:All the BLEU scores degrade by 10 points. <strong>Why?</strong> There are likely more differences in vocabulary and a larger mismatch.</li>
@@ -195,7 +195,7 @@ This better approximates $S=\arg\max_ {S^\prime}p(S^\prime|I)$</li>
 <li>Flicker30k to PASCAL: BLEU-1 53</li>
 <li>MSCOCO to SBU: BLEU-1 degrades from 28. <strong>Why?</strong> SBU has weak labeling (i.e., the labels were captions and not human generated descriptions), the task is much harder with a much larger and noisier vocabulary.</li>
 </ul>
-<h4>Generation Diversity Discussion</h4>
+<h4 id="generation-diversity-discussion"><a class="header-anchor" href="#generation-diversity-discussion">¶</a>Generation Diversity Discussion</h4>
 <blockquote>
 <p>If we take the best candidate, the sentence is present in the training set 80% of the times.</p>
 </blockquote>
@@ -203,26 +203,26 @@ This better approximates $S=\arg\max_ {S^\prime}p(S^\prime|I)$</li>
 <blockquote>
 <p>If we instead analyze the top 15 generated sentences, about half of the times we see a completely novel description, but still with a similar BLEU score, indicating that they are of enough quality, yet they provide a healthy diversity.</p>
 </blockquote>
-<h4>Ranking Results</h4>
+<h4 id="ranking-results"><a class="header-anchor" href="#ranking-results">¶</a>Ranking Results</h4>
 <blockquote>
 <p>NIC is doing surprisingly well on both ranking tasks.</p>
 </blockquote>
-<h4>Human Evaluation</h4>
+<h4 id="human-evaluation"><a class="header-anchor" href="#human-evaluation">¶</a>Human Evaluation</h4>
 <blockquote>
 <p>BLEU is not a perfect metric, as it does not capture well the difference between NIC and human descriptions assessed by raters.</p>
 </blockquote>
-<h4>Analysis of Embeddings</h4>
+<h4 id="analysis-of-embeddings"><a class="header-anchor" href="#analysis-of-embeddings">¶</a>Analysis of Embeddings</h4>
 <p>Some of the relationships learned by the model will help the vision component:</p>
 <blockquote>
 <p>Indeed, having “horse”, “pony”, and “donkey” close to each other will encourage the CNN to extract features that are relevant to horse-looking animals.</p>
 </blockquote>
-<h2>The MSCOCO Image Captioning Challenge</h2>
-<h3>Metrics</h3>
+<h2 id="the-mscoco-image-captioning-challenge"><a class="header-anchor" href="#the-mscoco-image-captioning-challenge">¶</a>The MSCOCO Image Captioning Challenge</h2>
+<h3 id="metrics"><a class="header-anchor" href="#metrics">¶</a>Metrics</h3>
 <p><strong>CIDER</strong>:All the automatic metrics to correlate with each other quite strongly</p>
-<h3>Improvements Over CVPR15 Model</h3>
-<h4>Image Model Improvement</h4>
+<h3 id="improvements-over-cvpr15-model"><a class="header-anchor" href="#improvements-over-cvpr15-model">¶</a>Improvements Over CVPR15 Model</h3>
+<h4 id="image-model-improvement"><a class="header-anchor" href="#image-model-improvement">¶</a>Image Model Improvement</h4>
 <p>GoogleLeNet -&gt; <em>Batch Normalization</em></p>
-<h4>Image Model Fine Tuning</h4>
+<h4 id="image-model-fine-tuning"><a class="header-anchor" href="#image-model-fine-tuning">¶</a>Image Model Fine Tuning</h4>
 <p>For training:</p>
 <ul>
 <li>To avoid overfitting, initialized the image convolutional network with a pretrained model.</li>
@@ -235,20 +235,20 @@ This better approximates $S=\arg\max_ {S^\prime}p(S^\prime|I)$</li>
 <li>Improvements achieved by this was 1 BLEU-4 point. <strong>Why?</strong></li>
 </ul>
 <blockquote>
-<p>More importantly, this change allowed the model to transfer information from the image to the language which was likely not possible due to the insufficient coverage of the ImageNet label space. For instance, after the change we found many examples where we predict the right colors, e.g. “A blue and yellow train ...”. It is plausible that the toplayer CNN activations are overtrained on ImageNet-specific classes and could throw away interesting features (such as color), thus the caption generation model may not output words corresponding to those features, without fine tuning the image model.</p>
+<p>More importantly, this change allowed the model to transfer information from the image to the language which was likely not possible due to the insufficient coverage of the ImageNet label space. For instance, after the change we found many examples where we predict the right colors, e.g. “A blue and yellow train …”. It is plausible that the toplayer CNN activations are overtrained on ImageNet-specific classes and could throw away interesting features (such as color), thus the caption generation model may not output words corresponding to those features, without fine tuning the image model.</p>
 </blockquote>
-<h4>Scheduled Sampling</h4>
+<h4 id="scheduled-sampling"><a class="header-anchor" href="#scheduled-sampling">¶</a>Scheduled Sampling</h4>
 <p><strong>A curriculum learning strategy</strong></p>
 <ul>
 <li>Gently change the training process from a fully guided scheme using the true previous word, towards a less guided scheme which mostly uses the model generated word instead.</li>
 <li>It improved up to 1.5 BLEU-4 points</li>
 </ul>
-<h4>Ensembling</h4>
+<h4 id="ensembling"><a class="header-anchor" href="#ensembling">¶</a>Ensembling</h4>
 <ul>
 <li>an ensemble of 5 models trained with Scheduled Sampling and 10 models trained with finetuning the image model.</li>
 <li>further improved the results by 1.5 BLEU-4 points. <strong>Why?</strong> To be discovered.</li>
 </ul>
-<h4>Beam Size Reduction</h4>
+<h4 id="beam-size-reduction"><a class="header-anchor" href="#beam-size-reduction">¶</a>Beam Size Reduction</h4>
 <ul>
 <li>The best beam size turned out to be small:<strong>3</strong>. <strong>Why?</strong></li>
 </ul>
@@ -269,7 +269,7 @@ This better approximates $S=\arg\max_ {S^\prime}p(S^\prime|I)$</li>
 <p>The single change improved CIDER score the most, yielding more than 2 BLEU-4 points improvement.</p>
 </li>
 </ul>
-<h2>Conclusion</h2>
+<h2 id="conclusion"><a class="header-anchor" href="#conclusion">¶</a>Conclusion</h2>
 </div><div class="tags"><a href="/tags/Image-Caption/">Image Caption</a><a href="/tags/Paper-Notes/">Paper Notes</a></div><div class="post-nav"><a class="pre" href="/2017/01/16/Every-Picture-Tells-a-Story-Generating-Sentences-from-Images/">Every Picture Tells a Story:Generating Sentences From Images</a><a class="next" href="/2016/12/05/My-CTF-Journey-i春秋《戏说春秋》/">My CTF Journey:i春秋《戏说春秋》</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computational-Social-Science/">Computational Social Science</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hacking/">Hacking</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life-Record/">Life Record</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/Image-Caption/" style="font-size: 15px;">Image Caption</a> <a href="/tags/Paper-Notes/" style="font-size: 15px;">Paper Notes</a> <a href="/tags/Object-Detection/" style="font-size: 15px;">Object Detection</a> <a href="/tags/CTF/" style="font-size: 15px;">CTF</a> <a href="/tags/Birthday/" style="font-size: 15px;">Birthday</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/23/where-would-you-go/">Where'd You Go?</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/21/what-is-computational-social-science/">什么是计算社会科学？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/18/生日快乐，凯尔先生2018/">生日快乐,凯尔先生</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Curbing-my-enthusiasm/">Curbing My Enthusiasm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/01/Faster-R-CNN/">Faster R-CNN</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/">DenseCap: Fully Convolutional Localization Networks for Dense Captioning</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/27/Paper-Excerpts-in-Image-Caption/">Paper Excerpts in Image Caption</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/16/Every-Picture-Tells-a-Story-Generating-Sentences-from-Images/">Every Picture Tells a Story:Generating Sentences From Images</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/Show-and-Tell-Lessons-learned-from-the-2015-MSCOCO-Image-Captioning-Challenge/">Show and Tell: Lessons Learned From the 2015 MSCOCO Image Captioning Challenge</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/05/My-CTF-Journey-i春秋《戏说春秋》/">My CTF Journey:i春秋《戏说春秋》</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Curbing My Enthusiasm.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
   });

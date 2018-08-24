@@ -3,109 +3,109 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create','UA-47712474-1','auto');ga('send','pageview');
-</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Paper Excerpts in Image Caption</h1><a id="logo" href="/.">Curbing My Enthusiasm</a><p class="description">You are free to do whatever you won't do.</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Paper Excerpts in Image Caption</h1><div class="post-meta">Feb 27, 2017<span> | </span><span class="category"><a href="/categories/Deep-Learning/">Deep Learning</a></span></div><div class="post-content"><p>This article intends to become a collection of brief summaries of papers in recent years (2014-), in the area of deep image captioning.
-&lt;!-- more --&gt;</p>
-<h2>2014</h2>
+</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Paper Excerpts in Image Caption</h1><a id="logo" href="/.">Curbing My Enthusiasm</a><p class="description">You are free to do whatever you won't do.</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Paper Excerpts in Image Caption</h1><div class="post-meta">Feb 27, 2017<span> | </span><span class="category"><a href="/categories/Deep-Learning/">Deep Learning</a></span></div><div class="post-content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>This article intends to become a collection of brief summaries of papers in recent years (2014-), in the area of deep image captioning.</p>
+<a id="more"></a>
+<h2 id="2014"><a class="header-anchor" href="#2014">¶</a>2014</h2>
 <hr>
-<h3>Deep Fragment Embeddings for Bidirectional Image Sentence Mapping</h3>
+<h3 id="deep-fragment-embeddings-for-bidirectional-image-sentence-mapping"><a class="header-anchor" href="#deep-fragment-embeddings-for-bidirectional-image-sentence-mapping">¶</a>Deep Fragment Embeddings for Bidirectional Image Sentence Mapping</h3>
 <p>arXiv:1406.5679</p>
-<h4>Model</h4>
-<p>A model for bidirectional retrieval of images and sentences through a multi-modal embedding of visual and natural language data.
-The model works on a finer level and embeds <strong>fragments of images</strong> (objects) and <strong>fragments of sentences</strong> (typed dependency tree relations) into a common space.
+<h4 id="model"><a class="header-anchor" href="#model">¶</a>Model</h4>
+<p>A model for bidirectional retrieval of images and sentences through a multi-modal embedding of visual and natural language data.<br>
+The model works on a finer level and embeds <strong>fragments of images</strong> (objects) and <strong>fragments of sentences</strong> (typed dependency tree relations) into a common space.<br>
 New <strong>fragment alignment objective</strong> that learns to directly associate these fragments across modalities.</p>
-<h4>Representation</h4>
-<p>Image: RCNN detections -&gt; Image Fragments
+<h4 id="representation"><a class="header-anchor" href="#representation">¶</a>Representation</h4>
+<p>Image: RCNN detections -&gt; Image Fragments<br>
 Sentence: Dependency relations -&gt; Sentence fragments</p>
-<h4>Experiment</h4>
+<h4 id="experiment"><a class="header-anchor" href="#experiment">¶</a>Experiment</h4>
 <p>Sentence/Image Retrieval</p>
-<h3>Multimodal Neural Language Models</h3>
-<p>ICML 2014
-<em>This paper is outdated, no need for further research.</em>
-####Model
+<h3 id="multimodal-neural-language-models"><a class="header-anchor" href="#multimodal-neural-language-models">¶</a>Multimodal Neural Language Models</h3>
+<p>ICML 2014<br>
+<em>This paper is outdated, no need for further research.</em><br>
+####Model<br>
 Multimodal Log-Bilinear Models</p>
-<h3>Explaining Images with Multimodal Recurrent Neutal Networks</h3>
+<h3 id="explaining-images-with-multimodal-recurrent-neutal-networks"><a class="header-anchor" href="#explaining-images-with-multimodal-recurrent-neutal-networks">¶</a>Explaining Images with Multimodal Recurrent Neutal Networks</h3>
 <p>arXiv:1410.1090</p>
-<h4>Model</h4>
-<p><strong>m-RNN model</strong>
-Objective: the probability distribution of generating a word given previous words and the image
+<h4 id="model-v2"><a class="header-anchor" href="#model-v2">¶</a>Model</h4>
+<p><strong>m-RNN model</strong><br>
+Objective: the probability distribution of generating a word given previous words and the image<br>
 Image features are input at <strong>each</strong> word generation</p>
-<h4>Representation</h4>
+<h4 id="representation-v2"><a class="header-anchor" href="#representation-v2">¶</a>Representation</h4>
 <p>Image features are extracted by a CNN, and then fed to m-RNN to generate the sentence.</p>
-<h4>Experiment</h4>
-<p>IAPR TC-12
-Flickr 8K
+<h4 id="experiment-v2"><a class="header-anchor" href="#experiment-v2">¶</a>Experiment</h4>
+<p>IAPR TC-12<br>
+Flickr 8K<br>
 Flickr 30K</p>
-<h3>Unifying Visual-Semantic Embeddings with Multimodal Neural Language Models</h3>
+<h3 id="unifying-visual-semantic-embeddings-with-multimodal-neural-language-models"><a class="header-anchor" href="#unifying-visual-semantic-embeddings-with-multimodal-neural-language-models">¶</a>Unifying Visual-Semantic Embeddings with Multimodal Neural Language Models</h3>
 <p>arXiv:1411.2539</p>
-<h4>Model</h4>
-<p>encoder-decoder models
-For the encoder, we learn a joint image-sentence embedding where sentences are encoded using long short-term memory (LSTM) recurrent neural networks [1]. Image features from a deep convolutional network are projected into the embedding space of the LSTM hidden states.
-For decoding, we introduce a new neural language model called the structure-content neural language model (SC-NLM).
+<h4 id="model-v3"><a class="header-anchor" href="#model-v3">¶</a>Model</h4>
+<p>encoder-decoder models<br>
+For the encoder, we learn a joint image-sentence embedding where sentences are encoded using long short-term memory (LSTM) recurrent neural networks [1]. Image features from a deep convolutional network are projected into the embedding space of the LSTM hidden states.<br>
+For decoding, we introduce a new neural language model called the structure-content neural language model (SC-NLM).<br>
 Loss:pairwise ranking loss</p>
-<h4>Experiment</h4>
+<h4 id="experiment-v3"><a class="header-anchor" href="#experiment-v3">¶</a>Experiment</h4>
 <p>Image annotation/search: better than m—RNN</p>
-<h3>Learning a Recurrent Visual Representation for Image Caption Generation</h3>
+<h3 id="learning-a-recurrent-visual-representation-for-image-caption-generation"><a class="header-anchor" href="#learning-a-recurrent-visual-representation-for-image-caption-generation">¶</a>Learning a Recurrent Visual Representation for Image Caption Generation</h3>
 <p>arXiv:1411.5654 (and CVPR 2015)</p>
-<h4>Model</h4>
-<p>Use an RNN to learn <strong>bi-directional</strong> mapping between images and descriptions.
+<h4 id="model-v4"><a class="header-anchor" href="#model-v4">¶</a>Model</h4>
+<p>Use an RNN to learn <strong>bi-directional</strong> mapping between images and descriptions.<br>
 An <strong>Recurrent Visual Memory</strong> that automatically learns to remember long-term visual concepts to aid in both sentence generation and visual feature reconstruction.</p>
-<h4>Representation</h4>
-<p>A bi-directional representation capable of generating both novel descriptions from images and visual epresentations from descriptions.
+<h4 id="representation-v3"><a class="header-anchor" href="#representation-v3">¶</a>Representation</h4>
+<p>A bi-directional representation capable of generating both novel descriptions from images and visual epresentations from descriptions.<br>
 As a word is generated or read the visual representation is updated to reflect the new information contained in the word.</p>
-<h4>Experiment</h4>
-<p>PASCAL 1K
-Flickr 8k &amp; 30K
-MS COCO
-Caption: Perplexity BLEU METEOR
+<h4 id="experiment-v4"><a class="header-anchor" href="#experiment-v4">¶</a>Experiment</h4>
+<p>PASCAL 1K<br>
+Flickr 8k &amp; 30K<br>
+MS COCO<br>
+Caption: Perplexity BLEU METEOR<br>
 Sentence/Image Retrieval</p>
-<h2>2015</h2>
+<h2 id="2015"><a class="header-anchor" href="#2015">¶</a>2015</h2>
 <hr>
-<h3>Long-term Recurrent Convolutional Networks for Visual Recognition and Description</h3>
+<h3 id="long-term-recurrent-convolutional-networks-for-visual-recognition-and-description"><a class="header-anchor" href="#long-term-recurrent-convolutional-networks-for-visual-recognition-and-description">¶</a>Long-term Recurrent Convolutional Networks for Visual Recognition and Description</h3>
 <p>CVPR 2015</p>
-<h4>Model</h4>
-<p>LRCN(Longterm Recurrent Convulutional Network)
-Different from CNN-RNN model, it used a CNN and a stack of 4 LSTMs for image caption.
+<h4 id="model-v5"><a class="header-anchor" href="#model-v5">¶</a>Model</h4>
+<p>LRCN(Longterm Recurrent Convulutional Network)<br>
+Different from CNN-RNN model, it used a CNN and a stack of 4 LSTMs for image caption.<br>
 Image features are provided as input to the sequential modal at <strong>each</strong> timestep.</p>
-<h4>Experiment</h4>
-<p>Flickr 30k
-MS COCO 2014
+<h4 id="experiment-v5"><a class="header-anchor" href="#experiment-v5">¶</a>Experiment</h4>
+<p>Flickr 30k<br>
+MS COCO 2014<br>
 better than m-RNN model （B1 58~67）</p>
-<h3>From Captions to Visual Concepts and Back</h3>
+<h3 id="from-captions-to-visual-concepts-and-back"><a class="header-anchor" href="#from-captions-to-visual-concepts-and-back">¶</a>From Captions to Visual Concepts and Back</h3>
 <p>CVPR 2015</p>
-<h4>Model</h4>
-<p>Pipeline:
+<h4 id="model-v6"><a class="header-anchor" href="#model-v6">¶</a>Model</h4>
+<p>Pipeline:<br>
 detect words -&gt; generate sentences -&gt; re-rank sentences</p>
 <ol>
 <li>Use weakly-supervised learning to create detectors for a set of words commonly found in image captions</li>
 <li>Train a maximum entropy (ME) LM from a set of training image descriptions</li>
 <li>Re-rank a set of high-likelihood sentences by a linear weighting of sentence features</li>
 </ol>
-<h4>Experiment</h4>
+<h4 id="experiment-v6"><a class="header-anchor" href="#experiment-v6">¶</a>Experiment</h4>
 <p>MSCOCO</p>
-<h3>Image Specificity</h3>
-<h4>Contribution</h4>
-<p>Introduced the notion of image specificity.
+<h3 id="image-specificity"><a class="header-anchor" href="#image-specificity">¶</a>Image Specificity</h3>
+<h4 id="contribution"><a class="header-anchor" href="#contribution">¶</a>Contribution</h4>
+<p>Introduced the notion of image specificity.<br>
 Presented two mechanisms to measure specificity given multiple descriptions of an image: an automated measure and a measure that relies on human judgement.</p>
-<h4>Insight</h4>
+<h4 id="insight"><a class="header-anchor" href="#insight">¶</a>Insight</h4>
 <p>The rationale is the following: a specific image should be ranked high only if the query description matches the reference description of that image well, because we know that sentences that describe this image tend to be very similar. For ambiguous images, on the other hand, even mediocre similarities between query and reference descriptions may be good enough.</p>
-<h4>Experiment</h4>
+<h4 id="experiment-v7"><a class="header-anchor" href="#experiment-v7">¶</a>Experiment</h4>
 <p>Image Search</p>
-<h2>2016</h2>
+<h2 id="2016"><a class="header-anchor" href="#2016">¶</a>2016</h2>
 <hr>
-<h3>DenseCap: Fully Convolutional Localization Networks for Dense Captioning</h3>
+<h3 id="densecap-fully-convolutional-localization-networks-for-dense-captioning"><a class="header-anchor" href="#densecap-fully-convolutional-localization-networks-for-dense-captioning">¶</a>DenseCap: Fully Convolutional Localization Networks for Dense Captioning</h3>
 <p>CVPR 2016</p>
-<h2>2017</h2>
+<h2 id="2017"><a class="header-anchor" href="#2017">¶</a>2017</h2>
 <hr>
-<h3>MAT: A Multimodal Attentive Translator for Image Captioning</h3>
+<h3 id="mat-a-multimodal-attentive-translator-for-image-captioning"><a class="header-anchor" href="#mat-a-multimodal-attentive-translator-for-image-captioning">¶</a>MAT: A Multimodal Attentive Translator for Image Captioning</h3>
 <p>arXiv:1702.05658</p>
-<h4>Model</h4>
-<p>a <strong>sequence-to-sequence RNN model</strong>
+<h4 id="model-v7"><a class="header-anchor" href="#model-v7">¶</a>Model</h4>
+<p>a <strong>sequence-to-sequence RNN model</strong><br>
 The input image is represented as <strong>a sequence of detected objects</strong> which feeds as the source sequence of the RNN model.</p>
-<h4>Representation</h4>
-<p>extract the objects features in the image and arrange them in a order using convolutional neural networks.
+<h4 id="representation-v4"><a class="header-anchor" href="#representation-v4">¶</a>Representation</h4>
+<p>extract the objects features in the image and arrange them in a order using convolutional neural networks.<br>
 a sequential attention layer is introduced to selectively attend to the objects that are related to generate corresponding words in the sentences.</p>
-<h4>Experiment</h4>
-<p>surpasses the state-of-the-art methods in all metrics
+<h4 id="experiment-v8"><a class="header-anchor" href="#experiment-v8">¶</a>Experiment</h4>
+<p>surpasses the state-of-the-art methods in all metrics<br>
 a CIDEr of 1.029 (c5) and 1.064 (c40) on MSCOCO evaluation server</p>
 </div><div class="tags"><a href="/tags/Image-Caption/">Image Caption</a><a href="/tags/Paper-Notes/">Paper Notes</a></div><div class="post-nav"><a class="pre" href="/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/">DenseCap: Fully Convolutional Localization Networks for Dense Captioning</a><a class="next" href="/2017/01/16/Every-Picture-Tells-a-Story-Generating-Sentences-from-Images/">Every Picture Tells a Story:Generating Sentences From Images</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computational-Social-Science/">Computational Social Science</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hacking/">Hacking</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life-Record/">Life Record</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/Image-Caption/" style="font-size: 15px;">Image Caption</a> <a href="/tags/Paper-Notes/" style="font-size: 15px;">Paper Notes</a> <a href="/tags/Object-Detection/" style="font-size: 15px;">Object Detection</a> <a href="/tags/CTF/" style="font-size: 15px;">CTF</a> <a href="/tags/Birthday/" style="font-size: 15px;">Birthday</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/23/where-would-you-go/">Where'd You Go?</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/21/what-is-computational-social-science/">什么是计算社会科学？</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/18/生日快乐，凯尔先生2018/">生日快乐,凯尔先生</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/23/Curbing-my-enthusiasm/">Curbing My Enthusiasm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/01/Faster-R-CNN/">Faster R-CNN</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/DenseCap-Fully-Convolutional-Localization-Networks-for-Dense-Captioning/">DenseCap: Fully Convolutional Localization Networks for Dense Captioning</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/27/Paper-Excerpts-in-Image-Caption/">Paper Excerpts in Image Caption</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/16/Every-Picture-Tells-a-Story-Generating-Sentences-from-Images/">Every Picture Tells a Story:Generating Sentences From Images</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/Show-and-Tell-Lessons-learned-from-the-2015-MSCOCO-Image-Captioning-Challenge/">Show and Tell: Lessons Learned From the 2015 MSCOCO Image Captioning Challenge</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/05/My-CTF-Journey-i春秋《戏说春秋》/">My CTF Journey:i春秋《戏说春秋》</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Curbing My Enthusiasm.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
